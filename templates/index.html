@@ -1,37 +1,63 @@
-您是指需要一個與“悟空”相關的程式嗎？在這裡提供一個簡單的基於Node.js的RESTful API範例，模擬一個"孫悟空角色"的簡單資訊系統：
+<!DOCTYPE html>
+<html lang="zh-TW">
 
-// app.js
-const express = require('express');
-const app = express();
-const PORT = process.env.PORT || 3000;
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>理想保險：您的資產守護專家</title>
+    <style>
+        body {
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
 
-app.use(express.json());
+        header {
+            background-color: #d25d18; /* 愛馬仕橘 */
+            color: #fff;
+            text-align: center;
+            padding: 2rem 1rem;
+        }
 
-let wukong = {
-  name: "孫悟空",
-  origin: "花果山",
-  abilities: ["變身", "筋斗雲", "金箍棒"],
-};
+        h1 {
+            margin: 0;
+        }
 
-app.get('/wukong', (req, res) => {
-  res.json(wukong);
-});
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            text-align: center;
+        }
 
-app.post('/wukong', (req, res) => {
-  const { name, origin, abilities } = req.body;
-  if (name) wukong.name = name;
-  if (origin) wukong.origin = origin;
-  if (abilities) wukong.abilities = abilities;
-  res.json(wukong);
-});
+        .btn-consult {
+            background-color: #d25d18; /* 愛馬仕橘 */
+            color: #fff;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            display: inline-block;
+            transition: background-color 0.3s;
+            margin-top: 1.5rem;
+        }
 
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+        .btn-consult:hover {
+            background-color: #bf4f14; /* 深一點的愛馬仕橘 */
+        }
+    </style>
+</head>
 
-在終端中運行以下命令來安裝所需的依賴和啟動服務器：
-npm init -y
-npm install express
-node app.js
+<body>
+    <header>
+        <h1>理想保險：您的資產守護專家</h1>
+    </header>
 
-這個簡單的API允許你獲取和修改悟空的基本資訊。
+    <div class="container">
+        <p>以專業、誠信和責任心提供最全面的保險理財服務，助您安心擁有美好未來。</p>
+        <a href="#" class="btn-consult">預約諮詢</a>
+    </div>
+</body>
+
+</html>
