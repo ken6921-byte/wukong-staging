@@ -1,1 +1,37 @@
-<html><body><marquee>「，幫我在專案目錄下寫一個 leads.html。我要一個艾瑪仕橘色調的名單收集頁，包含姓名、保險需求、年收入三個欄位，並且要符合現代審美。</marquee></body></html>
+您是指需要一個與“悟空”相關的程式嗎？在這裡提供一個簡單的基於Node.js的RESTful API範例，模擬一個"孫悟空角色"的簡單資訊系統：
+
+// app.js
+const express = require('express');
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+app.use(express.json());
+
+let wukong = {
+  name: "孫悟空",
+  origin: "花果山",
+  abilities: ["變身", "筋斗雲", "金箍棒"],
+};
+
+app.get('/wukong', (req, res) => {
+  res.json(wukong);
+});
+
+app.post('/wukong', (req, res) => {
+  const { name, origin, abilities } = req.body;
+  if (name) wukong.name = name;
+  if (origin) wukong.origin = origin;
+  if (abilities) wukong.abilities = abilities;
+  res.json(wukong);
+});
+
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
+
+在終端中運行以下命令來安裝所需的依賴和啟動服務器：
+npm init -y
+npm install express
+node app.js
+
+這個簡單的API允許你獲取和修改悟空的基本資訊。
